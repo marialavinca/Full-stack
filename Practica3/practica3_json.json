@@ -1,0 +1,238 @@
+[
+  {
+    "nombre": "Alcampo",
+    "direccion": "C.C Gran Plaza 2 Calle Los Químicos 1",
+    "geolocalizacion": [
+      "40º39'32.3 N",
+      "3º55'47.5 W"
+    ],
+    "departamentos": {
+      "fruteria": [
+        {
+          "producto": "Plátano de Canarias",
+          "oferta": "-50% a partir del 2º kg",
+          "periodoVigencia": [
+            "15/4/2022",
+            "15/6/2022" 
+
+          ],
+          "unidades": 3,
+          "unidadMedida": "kilogramos",
+          "precioEuros": 2.50,
+          "adquirido": true
+        },
+        {
+          "producto": "Cerezas del Valle de Jerte",
+          "oferta": "Llevando 2 kg regalamos el 3º kg",
+          "periodoVigencia": [
+            "12/6/2022",
+            "12/8/2022"
+          ],
+          "unidades": 3,
+          "unidadMedida": "kilogramos",
+          "precioEuros": 5.75,
+          "adquirido": true
+        },
+        {
+          "producto": "Fresón de Huelva",
+          "oferta": "50% de descuento",
+          "periodoVigencia": [
+            "3/5/2022",
+            "28/5/2022"
+          ],
+          "unidades": 1,
+          "unidadMedida": "kilogramos",
+          "precioEuros": 6.25,
+          "adquirido": true
+        }
+      ],
+      "panaderia": [
+        {
+          "producto": "Pan de Viena",
+          "oferta": "2x1",
+          "periodoVigencia": [
+            "25/12/2022",
+            "6/1/2023"
+          ],
+          "unidades": 6,
+          "unidadMedida": "unidades",
+          "precioEuros": 0.85,
+          "adquirido": true
+        },
+        {
+          "producto": "Magdalenas",
+          "oferta": "-50% en 2º paquete",
+          "periodoVigencia": [
+            "4/2/2022",
+            "7/7/2022"
+          ],
+          "unidades": 0,
+          "unidadMedida": "paquetes",
+          "precioEuros": 1.85,
+          "adquirido": false
+        },
+        {
+          "producto": "Croissant",
+          "oferta": "3x2",
+          "periodoVigencia": [
+            "1/1/2022",
+            "31/12/2022" ],
+          "unidades": 6,
+          "unidadMedida": "unidades",
+          "precioEuros": 0.75,
+          "adquirido": true
+        }],
+      "pescaderia": [
+        {
+          "producto": "Merluza",
+          "oferta": null,
+          "periodoVigencia": null,
+          "unidades": 1,
+          "unidadMedida": "kilogramos",
+          "precioEuros": 10.80,
+          "adquirido": true
+        },
+        {
+          "producto": "Almejas",
+          "oferta": "-50% a partir del 2º kg",
+          "periodoVigencia": [
+            "3/3/2022",
+            "3/4/2022"
+          ],
+          "unidades": 0,
+          "unidadMedida": "kilogramos",
+          "precioEuros": 15.90,
+          "adquirido": false
+        },
+        {
+          "producto": "Bonito del Cantábrico",
+          "oferta": "-50% a partir del 2º kg",
+          "periodoVigencia": [
+            "2/2/2022",
+            "6/8/2022"
+          ],
+          "unidades": 2,
+          "unidadMedida": "kilogramos",
+          "precioEuros": 20.45,
+          "adquirido": true
+        }]
+    }
+
+  },
+  {
+    "nombre": "Mercadona",
+    "direccion": "Calle de López de Hoyos 151",
+    "geolocalizacion": [
+      "40º29'59.5 N",
+      "3º39'18.7 W"
+    ],
+    "departamentos": {
+      "fruteria": [
+        {
+          "producto": "Manzana Reineta",
+          "oferta": null,
+          "periodoVigencia": null,
+          "unidades": 10,
+          "unidadMedida": "unidades",
+          "precioEuros": 0.20,
+          "adquirido": true
+        },
+        {
+          "producto": "Naranja de Navel Late",
+          "oferta": "2º malla al 75% de descuento",
+          "periodoVigencia": [
+            "1/1/2022",
+            "1/6/2022"
+          ],
+          "unidades": 4,
+          "unidadMedida": "mallas",
+          "precioEuros": 3.50,
+          "adquirido": true
+        },
+        {
+          "producto": "Arándanos",
+          "oferta": "3x2",
+          "periodoVigencia": [
+            "1/6/2022",
+            "1/9/2022"
+          ],
+          "unidades": 3,
+          "unidadMedida": "tarrinas",
+          "precioEuros": 4.50,
+          "adquirido": true
+        }],
+      "panaderia": [
+        {
+          "producto": "Pan de molde",
+          "oferta": "3x2",
+          "periodoVigencia": [
+            "1/6/2022",
+            "31/7/2022"
+          ],
+          "unidades": 4,
+          "unidadMedida": "paquetes",
+          "precioEuros": 2.25,
+          "adquirido": true
+        },
+        {
+          "producto": "Palillos",
+          "oferta": null,
+          "periodoVigencia": null,
+          "unidades": 2,
+          "unidadMedida": "bolsas",
+          "precioEuros": 1.47,
+          "adquirido": true
+        },
+        {
+          "producto": "Sobaos Pasiegos",
+          "oferta": "3x2",
+          "periodoVigencia": [
+            "23/2/2022",
+            "17/5/2022"
+          ],
+          "unidades": 3,
+          "unidadMedida": "cajas",
+          "precioEuros": 11.50,
+          "adquirido": true
+        }],
+      "pescaderia": [
+        {
+          "producto": "Bogavante",
+          "oferta": "-50% a partir de la 2º unidad",
+          "periodoVigencia": [
+            "6/1/2022",
+            "28/1/2022"
+          ],
+          "unidades": 2,
+          "unidadMedida": "unidades",
+          "precioEuros": 10.60,
+          "adquirido": true
+        },
+        {
+          "producto": "Rape",
+          "oferta": "-10% a partir del 2º kg",
+          "periodoVigencia": [
+            "1/10/2022",
+            "1/11/2022"
+          ],
+          "unidades": 1.5,
+          "unidadMedida": "kilogramos",
+          "precioEuros": 11.60,
+          "adquirido": true
+        },
+        {
+          "producto": "Chopitos",
+          "oferta": "2º docena al 50%",
+          "periodoVigencia": [
+            "4/11/2022",
+            "21/11/2022"
+          ],
+          "unidades": 2,
+          "unidadMedida": "docenas",
+          "precioEuros": 9.99,
+          "adquirido": true
+        }
+      ]
+    }
+  }
+]
