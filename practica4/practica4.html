@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Carga de fichero</title>
+    <script>
+        if (window.File && window.FileReader && window.FileList) {
+            console.log('Todas las APIs soportadas');
+        } else {
+            alert('La API de File no es soportada por este navegador');
+        }
+
+        function fileSelect(evt) {
+            var files = evt.target.files;
+            alert('El vídeo se está cargando');
+            for(var i = 0, f; f = files[i]; i++) {
+                var reader = new FileReader();
+                reader.onload = (function (theFile) {
+                    return function (e) {
+                        var span = document.createElement('span');
+                        span.innerHTML = ['<video class="thumb" src="',
+                                e.target.result,
+                                '" id="video" title="', escape(theFile.name),
+                                '"/>'].join('');
+                        document.getElementById('list').insertBefore(span, null);
+                    };
+                })(f);
+                reader.readAsDataURL(f);
+            }
+        }
+        document.getElementById('files').addEventListener('change', fileSelect, false);
+    </script>
+</head>
+<body>
+    <h3>Carga de vídeo</h3>
+    <p>
+        <input type="file" id="files" name="files[]" accept="video/*" multiple onchange="fileSelect(event)" />
+        <figure>
+            <output id="list"></output>
+        </figure>
+        <div>
+            <button onclick="document.getElementById('video').play();">Reproducir</button>
+            <button onclick="document.getElementById('video').pause();">Pausa</button>
+            <button onclick="document.getElementById('video').volume += 0.1;">Subir volumen</button>
+            <button onclick="document.getElementById('video').volume -= 0.1;">Bajar volumen</button>
+        </div>
+    </p>
+</body>
+</html>
