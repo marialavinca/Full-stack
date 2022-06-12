@@ -1,0 +1,23 @@
+.input {
+    width: 27%;
+}
+
+
+.inputs {
+  position: absolute;
+  top: 20px;
+  right: 1000px;
+}
+
+.gender {
+  position: absolute;
+  top: 2000px;
+  right: 1000px;
+}
+
+.socios {
+  position: absolute;
+  top: 20px;
+  left: 1000px;
+}
+
