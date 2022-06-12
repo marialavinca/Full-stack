@@ -1,0 +1,107 @@
+<div class="container-fluid">
+  <form [formGroup]="inputs">
+    <div class="form-group">
+      <h2>Formulario de persona</h2>
+      <mat-form-field appearance="fill" class="input">
+        <mat-label>Nombre</mat-label>
+        <input name="nombre" [class.is-invalid]="nombre?.invalid && nombre?.touched" matInput autocomplete="off" formControlName="nombre" required>
+        <div *ngIf="(nombre?.invalid && nombre?.touched) || nombre?.dirty">
+          <small *ngIf="nombre?.errors?.['required']" class="text-danger">Nombre es un campo obligatorio. </small>
+          <small *ngIf="nombre?.errors?.['minlength']" class="text-danger">Nombre tiene que tener 3 caracteres como mínimo. </small>
+          <small *ngIf="nombre?.errors?.['pattern']" class="text-danger">Nombre tiene que contener todo letras, no se aceptan tildes ni caracteres especiales excepto la ñ. </small>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill" class="input">
+        <mat-label>Apellidos</mat-label>
+        <input name="apellidos" [class.is-invalid]="apellidos?.invalid && apellidos?.touched" matInput autocomplete="off" formControlName="apellidos" required>
+        <div *ngIf="(apellidos?.invalid && apellidos?.touched) || apellidos?.dirty">
+          <small *ngIf="apellidos?.errors?.['required']" class="text-danger">Apellidos es un campo obligatorio. </small>
+          <small *ngIf="apellidos?.errors?.['minlength']" class="text-danger">Apellidos tiene que tener 3 caracteres como mínimo. </small>
+          <small *ngIf="apellidos?.errors?.['pattern']" class="text-danger">Apellidos tiene que contener todo letras, no se aceptan tildes ni caracteres especiales excepto la ñ. </small>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill" class="input">
+        <mat-label>Edad</mat-label>
+        <input name="edad" [class.is-invalid]="edad?.invalid && edad?.touched" matInput autocomplete="off" formControlName="edad" required min="0" max="125">
+        <span matSuffix>años</span>
+        <div *ngIf="(edad?.invalid && edad?.touched) || edad?.dirty">
+          <small *ngIf="edad?.errors?.['required']" class="text-danger">Edad es un campo obligatorio. </small>
+          <small *ngIf="edad?.errors?.['min']" class="text-danger">Edad tiene que valer 0 como mínimo. </small>
+          <small *ngIf="edad?.errors?.['max']" class="text-danger">Edad tiene que valer 125 como máximo. </small>
+          <small *ngIf="edad?.errors?.['pattern']" class="text-danger">Edad tiene que ser un número entre 0 y 125. </small>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill" class="input">
+        <mat-label>DNI</mat-label>
+        <input name="dni" [class.is-invalid]="dni?.invalid && dni?.touched" matInput autocomplete="off" formControlName="dni" required>
+        <div *ngIf="(dni?.invalid && dni?.touched) || dni?.dirty">
+          <small *ngIf="dni?.errors?.['required']" class="text-danger">DNI es un campo obligatorio. </small>
+          <small *ngIf="dni?.errors?.['minlength']" class="text-danger">DNI tiene que tener 9 caracteres como mínimo. </small>
+          <small *ngIf="dni?.errors?.['maxlength']" class="text-danger">DNI tiene que tener 9 caracteres como máximo. </small>
+          <small *ngIf="dni?.errors?.['pattern']" class="text-danger">DNI tiene que tener los 8 primeros caracteres como números y el último caracter como letra. </small>
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <label>Cumpleaños<br /></label>
+      <input type="date" name="cumpleanos" [class.is-invalid]="cumpleanos?.invalid && cumpleanos?.touched" autocomplete="off" formControlName="cumpleanos" placeholder="" required/>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill" class="input">
+        <mat-label>Color favorito</mat-label>
+        <input name="colorfav" [class.is-invalid]="colorfav?.invalid && colorfav?.touched" matInput autocomplete="off" formControlName="colorfav" required>
+        <div *ngIf="(colorfav?.invalid && colorfav?.touched) || colorfav?.dirty">
+          <small *ngIf="colorfav?.errors?.['required']" class="text-danger">Color favorito es un campo obligatorio. </small>
+          <small *ngIf="colorfav?.errors?.['minlength']" class="text-danger">Color favorito tiene que tener 3 caracteres como mínimo. </small>
+          <small *ngIf="colorfav?.errors?.['pattern']" class="text-danger">Color favorito tiene que contener todo letras, no se aceptan tildes ni caracteres especiales excepto la ñ. </small>
+        </div>
+      </mat-form-field>
+    </div>
+  </form>
+  <form [formGroup]="gender">
+    <div class="form-group">
+      <label>Sexo<br /></label>
+      <input name="sexo" type="radio" value="Hombre" formControlName="sexo" checked>Hombre
+      <input name="sexo" type="radio" value="Mujer" formControlName="sexo">Mujer
+      <input name="sexo" type="radio" value="Otro" formControlName="sexo">Otro
+      <input name="sexo" type="radio" value="No especificado" formControlName="sexo">No especificado
+    </div>
+
+    <div class="button">
+      <button (click)="registrar()" [disabled]="nombre?.invalid || apellidos?.invalid || edad?.invalid || dni?.invalid || cumpleanos?.invalid || colorfav?.invalid" mat-raised-button color="primary">Registrar</button>
+      <button (click)="limpiar()" mat-stroked-button color="primary">Reset</button>
+    </div>
+    <div class="personas">
+      <h2>Lista de personas</h2>
+      <ol>
+        <li *ngFor="let persona of lista;let i=index">
+
+          <h3>Persona: {{persona.nombre}} {{persona.apellidos}}</h3>
+          <p>Edad: {{persona.edad}}</p>
+          <p>DNI: {{persona.dni}}</p>
+          <p>Cumpleaños: {{obtenerFecha(persona.cumpleanos)}}</p>
+          <p>Color favorito: {{persona.colorFavorito}}</p>
+          <p>Sexo: {{persona.sexo}}</p>
+          <button (click)="borrar(i)" mat-icon-button color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button (click)="editar(i)" mat-icon-button color="primary">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button (click)="guardarEdicion(i)" mat-raised-button [disabled]="nombre?.invalid || apellidos?.invalid || edad?.invalid || dni?.invalid || cumpleanos?.invalid || colorfav?.invalid" color="primary">Editar</button>
+        </li>
+      </ol>
+    </div>
+  </form>
+</div>
